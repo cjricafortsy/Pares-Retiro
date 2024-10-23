@@ -1,0 +1,256 @@
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(10, 10, 123);
+    border-radius: 10px;
+}
+
+:root {
+    --background-color: red;
+    --font: 'Blackoak Std', serif;
+}
+
+body {
+    overflow: hidden;
+    margin: 0;
+    scroll-behavior: smooth;
+}
+
+html {
+    height: 100%;
+}
+
+.home-page,
+.animated-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.home-page.visible,
+.animated-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.home-page {
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.home-page.visible{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.container-fluid {
+    position: relative;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.text-start {
+    z-index: 2;
+    position: relative;
+}
+
+.home-page h1 {
+    font-family: var(--font);
+    font-weight: bold;
+    color: red;
+    font-size: 5rem;
+    text-shadow: 2px 2px 0px white, -2px -2px 0px white, 2px -2px 0px white, -2px 2px 0px white;
+    margin-bottom: 0;
+}
+
+.blue {
+    color: rgb(4, 4, 133);
+}
+
+.home-page h2 {
+    font-family: var(--font);
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.line {
+    position: relative;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    display: block;
+    margin-bottom: 0;
+}
+
+.line::after {
+    position: absolute;
+    content: '';
+    width: 60px;
+    height: 1px;
+    background-color: var(--background-color);
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+    z-index: 2;
+}
+
+.button-group i {
+    color: black;
+}
+
+.button-group a:hover i {
+    color: white;
+}
+
+.circle-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin: 0 5px;
+}
+
+.circle-button:hover {
+    background: rgba(169, 4, 4, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mute-button {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    color: inherit; /* Use the current text color */
+    text-decoration: none;
+}
+
+.mute-button:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+.mute-button:visited {
+    color: inherit; /* Prevent color change when visited */
+}
+
+.mute-button:hover {
+    background: rgba(169, 4, 4, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.mute-button:hover i {
+    color: white;
+}
+
+.box {
+    position: relative;
+    width: 100px; /* Adjust as needed */
+    height: 130px; /* Adjust as needed */
+    overflow: hidden; /* Hide overflow */
+}
+
+.box span {
+    width: 30px;
+    height: 30px;
+    display: block;
+    border-right: 5px solid white;
+    border-bottom: 5px solid white;
+    transform: rotate(45deg);
+    margin: 5px;
+    animation: animate 2s infinite;
+}
+
+.box span:nth-child(2) {
+    animation-delay: -0.2s;
+}
+
+.box span:nth-child(3) {
+    animation-delay: -0.4s;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+        transform: rotate(45deg) translate(10px, 10px);
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.qr {
+    background-image: url(Assets/BG.png);
+    padding: 20px;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    border-radius: 0;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+    padding: 50px;
+    width: 100%;
+    max-width: 550px;
+    margin: auto;
+}
+
+.text-center h1 {
+    margin-bottom: 3rem;
+    color: rgb(255, 255, 255);
+}
+
+@media (max-width: 576px) {
+    .home-page h1 {
+        text-align: center;
+    }
+
+    .home-page h2 {
+        text-align: center; 
+    }
+
+    .line {
+        left: 40%;
+    }
+
+    .button-group {
+        justify-content: center;
+    }
+}
