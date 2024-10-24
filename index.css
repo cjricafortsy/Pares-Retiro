@@ -249,11 +249,11 @@ video {
 .feedback {
     transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and transform */
     position: absolute; /* Position it absolutely within the widget */
-    bottom: 60px; /* Adjust based on desired placement */
-    right: 30%; /* Align to the right */
+    bottom: 40%; /* Adjust based on desired placement */
+    right: 25%; /* Align to the right */
     z-index: 10; /* Make sure it's above the widget */
     opacity: 1; /* Start fully visible */
-    width: 15rem;
+    width: 30rem;
     pointer-events: none;
 }
 
@@ -323,6 +323,16 @@ video {
         width: 25%; /* Adjust span width */
         height: 25%; /* Adjust span height */
         margin: 5%; /* Maintain margins */
+    }
+
+    .feedback{
+        width: 150%;
+        height: auto;
+        right: 40%;
+    }
+
+    .widget:hover{
+        transform: scale(2);
     }
 }
 
