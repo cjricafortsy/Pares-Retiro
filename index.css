@@ -1,7 +1,8 @@
 @font-face {
     font-family: 'Cooper Black';
-    src: url('path/to/cooper-black.woff2') format('woff2'),
-         url('path/to/cooper-black.woff') format('woff');
+    src: url('fonts/cooper-black.woff2') format('woff2'),
+         url('fonts/cooper-black.woff') format('woff'),
+         url('fonts/cooper-black.ttf') format('truetype'); /* Add other formats as needed */
     font-weight: normal;
     font-style: normal;
 }
@@ -85,7 +86,7 @@ video {
 }
 
 .home-page h1 {
-    font-family: 'Cooper Black', 'sans-serif';
+    font-family: 'Cooper Black', sans-serif;
     font-weight: bold;
     color: red;
     font-size: 6rem;
@@ -98,7 +99,7 @@ video {
 }
 
 .home-page h2 {
-    font-family: 'Cooper Black', 'sans-serif';
+    font-family: 'Cooper Black', sans-serif;
     font-size: 2rem;
     color: white;
     font-weight: bold;
