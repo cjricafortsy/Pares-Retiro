@@ -2,12 +2,12 @@ const video = document.getElementById('myVideo');
 const muteButton = document.getElementById('muteButton');
 const icon = muteButton.querySelector('.icon i');
 
-// Ensure video starts playing automatically (unmuted) when the page loads
-video.muted = false;
+// Ensure video starts playing automatically (muted) when the page loads
+video.muted = true;
 
-// Set the initial icon state
-icon.classList.add('bx-volume-low');
-icon.classList.remove('bx-volume-mute');
+// Set the initial icon state to indicate that the video is muted
+icon.classList.add('bx-volume-mute');
+icon.classList.remove('bx-volume-low');
 
 // Add an event listener for the mute button
 muteButton.addEventListener('click', (event) => {
@@ -20,6 +20,14 @@ muteButton.addEventListener('click', (event) => {
     icon.classList.toggle('bx-volume-low', !video.muted);
     icon.classList.toggle('bx-volume-mute', video.muted);
 });
+
+// Play the video when the page loads
+window.addEventListener('load', () => {
+    video.play().catch(error => {
+        console.error("Error trying to play the video:", error);
+    });
+});
+
 
 // Scroll animation for transitioning between sections
 const sections = document.querySelectorAll('.home-page, .animated-section');
@@ -73,4 +81,23 @@ window.addEventListener('load', () => {
     video.play().catch(error => {
         console.error("Error trying to play the video:", error);
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const feedbackImage = document.getElementById('feedbackImage');
+    const contactWidget = document.getElementById('contact-widget');
+
+    // Function to hide feedback image
+    function hideFeedback() {
+        feedbackImage.classList.add('hidden');
+    }
+
+    // Function to show feedback image
+    function showFeedback() {
+        feedbackImage.classList.remove('hidden');
+    }
+
+    // Add event listeners for mouseenter and mouseleave
+    contactWidget.addEventListener('mouseenter', hideFeedback);
+    contactWidget.addEventListener('mouseleave', showFeedback);
 });

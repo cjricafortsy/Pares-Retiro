@@ -246,6 +246,33 @@ video {
     font-size: 3rem;
 }
 
+.feedback {
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and transform */
+    position: absolute; /* Position it absolutely within the widget */
+    bottom: 60px; /* Adjust based on desired placement */
+    right: 30%; /* Align to the right */
+    z-index: 10; /* Make sure it's above the widget */
+    opacity: 1; /* Start fully visible */
+    width: 15rem;
+    pointer-events: none;
+}
+
+.widget {
+    transition: transform 0.3s ease;
+    transform-origin: bottom right;
+    z-index: 2; /* Below feedback image */
+}
+
+.widget:hover {
+    transform: scale(3); /* Scale up on hover */
+}
+
+.feedback.hidden {
+    opacity: 0; /* Fade out */
+    pointer-events: none; /* Prevent interaction */
+    transform: translateY(-10px); /* Slight upward movement for effect */
+}
+
 @media (max-width: 576px) {
     .text-start {
         position: absolute; /* Change to absolute for better centering */
