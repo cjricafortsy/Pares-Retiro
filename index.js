@@ -2,14 +2,21 @@ const video = document.getElementById('myVideo');
 const muteButton = document.getElementById('muteButton');
 const icon = muteButton.querySelector('.icon i');
 
-// Set the initial state of the video to unmuted
+// Ensure video starts playing automatically (unmuted) when the page loads
 video.muted = false;
+
+// Set the initial icon state
 icon.classList.add('bx-volume-low');
 icon.classList.remove('bx-volume-mute');
 
+// Add an event listener for the mute button
 muteButton.addEventListener('click', (event) => {
-    event.preventDefault(); // Prevent the default anchor behavior
-    video.muted = !video.muted; // Toggle mute state
+    event.preventDefault(); // Prevent default behavior
+
+    // Toggle mute state
+    video.muted = !video.muted;
+
+    // Update icon based on mute state
     icon.classList.toggle('bx-volume-low', !video.muted);
     icon.classList.toggle('bx-volume-mute', video.muted);
 });
@@ -41,19 +48,29 @@ sections.forEach(section => {
 
 // Scroll handling for smooth transitions
 document.addEventListener('wheel', (event) => {
-    if (event.deltaY > 0) {
-        const currentSection = document.querySelector('.home-page.visible');
-        const nextSection = currentSection.nextElementSibling; // Get the next section
+    const currentSection = document.querySelector('.home-page.visible');
 
-        if (nextSection) {
-            nextSection.scrollIntoView({ behavior: 'smooth' });
+    if (event.deltaY > 0) {
+        if (currentSection) {
+            const nextSection = currentSection.nextElementSibling; // Get the next section
+            if (nextSection) {
+                nextSection.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     } else {
         const currentSection = document.querySelector('.animated-section.visible');
-        const prevSection = currentSection.previousElementSibling; // Get the previous section
-
-        if (prevSection) {
-            prevSection.scrollIntoView({ behavior: 'smooth' });
+        if (currentSection) {
+            const prevSection = currentSection.previousElementSibling; // Get the previous section
+            if (prevSection) {
+                prevSection.scrollIntoView({ behavior: 'smooth' });
+            }
         }
     }
+});
+
+// Play the video when the page loads
+window.addEventListener('load', () => {
+    video.play().catch(error => {
+        console.error("Error trying to play the video:", error);
+    });
 });

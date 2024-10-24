@@ -15,13 +15,14 @@
 
 :root {
     --background-color: red;
-    --font: 'Blackoak Std', serif;
+    --font: 'Cooper Black', sans-serif;
 }
 
 body {
     overflow: hidden;
     margin: 0;
     scroll-behavior: smooth;
+    background-color: black;
 }
 
 html {
@@ -32,7 +33,6 @@ html {
 .animated-section {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .home-page.visible,
@@ -46,7 +46,6 @@ html {
     overflow: hidden;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
 .home-page.visible{
@@ -73,13 +72,15 @@ video {
 .text-start {
     z-index: 2;
     position: relative;
+    justify-content: center;
+    top: 45%;
 }
 
 .home-page h1 {
     font-family: var(--font);
     font-weight: bold;
     color: red;
-    font-size: 5rem;
+    font-size: 6rem;
     text-shadow: 2px 2px 0px white, -2px -2px 0px white, 2px -2px 0px white, -2px 2px 0px white;
     margin-bottom: 0;
 }
@@ -90,7 +91,7 @@ video {
 
 .home-page h2 {
     font-family: var(--font);
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: white;
     font-weight: bold;
     text-shadow: 1px 1px 0px black, -1px -1px 0px black, 1px -1px 0px black, -1px 1px 0px black;
@@ -109,7 +110,7 @@ video {
 .line::after {
     position: absolute;
     content: '';
-    width: 60px;
+    width: 100px;
     height: 1px;
     background-color: var(--background-color);
 }
@@ -123,6 +124,7 @@ video {
 
 .button-group i {
     color: black;
+    font-size: 1.5rem;
 }
 
 .button-group a:hover i {
@@ -133,8 +135,8 @@ video {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.7);
     margin: 0 5px;
@@ -148,23 +150,15 @@ video {
 
 .mute-button {
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: rgba(255, 255, 255, 0.7);
     border: none;
-    color: inherit; /* Use the current text color */
+    color: inherit;
     text-decoration: none;
-}
-
-.mute-button:focus {
-    outline: none; /* Remove outline on focus */
-}
-
-.mute-button:visited {
-    color: inherit; /* Prevent color change when visited */
 }
 
 .mute-button:hover {
@@ -177,21 +171,31 @@ video {
     color: white;
 }
 
+.mute-button i {
+    margin: 0;
+    padding: 0;
+}
+
 .box {
     position: relative;
-    width: 100px; /* Adjust as needed */
-    height: 130px; /* Adjust as needed */
+    width: 25%; /* Adjust width for responsiveness */
+    max-width: 150px; /* Optional max width to maintain size on larger screens */
+    height: auto; /* Change to auto to adjust height dynamically */
+    aspect-ratio: 110 / 110; /* Maintain aspect ratio */
     overflow: hidden; /* Hide overflow */
+    margin: 0 auto; /* Center the box horizontally */
+    z-index: 2;
+    left: 2rem;
 }
 
 .box span {
-    width: 30px;
-    height: 30px;
+    width: 20%; /* Use percentage for width */
+    height: 20%; /* Use percentage for height */
     display: block;
     border-right: 5px solid white;
     border-bottom: 5px solid white;
     transform: rotate(45deg);
-    margin: 5px;
+    margin: 5%; /* Use percentage for margin */
     animation: animate 2s infinite;
 }
 
@@ -209,7 +213,7 @@ video {
     }
     50% {
         opacity: 1;
-        transform: rotate(45deg) translate(10px, 10px);
+        transform: rotate(45deg) translate(10%, 10%); /* Use percentage for translation */
     }
     100% {
         opacity: 0;
@@ -219,6 +223,9 @@ video {
 .qr {
     background-image: url(Assets/BG.png);
     padding: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .container {
@@ -235,22 +242,103 @@ video {
 .text-center h1 {
     margin-bottom: 3rem;
     color: rgb(255, 255, 255);
+    font-family: var(--font);
+    font-size: 3rem;
 }
 
 @media (max-width: 576px) {
+    .text-start {
+        position: absolute; /* Change to absolute for better centering */
+        left: 30%; /* Center horizontally */
+        top: 20%; /* Adjust vertical positioning as needed */
+        transform: translate(-10%, 0); /* Center it by offsetting half its width */
+        text-align: center; /* Center text within the element */
+    }
+    
+
     .home-page h1 {
+        font-size: 2.5rem; /* Reduced font size */
         text-align: center;
     }
 
     .home-page h2 {
+        font-size: 1rem; /* Reduced font size */
         text-align: center; 
     }
 
     .line {
-        left: 40%;
+        display: flex; /* Use flexbox */
+        justify-content: center; /* Center the line */
+        margin: 20px 0; /* Add vertical spacing */
+    }
+
+    .line::after {
+        width: 100px; /* Width of the line */
+        height: 1px; /* Line height */
+        background-color: var(--background-color);
+        margin: 0 auto; /* Center the line */
     }
 
     .button-group {
-        justify-content: center;
+        justify-content: center; /* Center buttons */
+    }
+
+    .box {
+        width: 80%; /* Full width on smaller screens */
+        max-width: 120px; /* Limit max width */
+        height: auto; /* Adjust height based on content */
+        margin: 0 auto; /* Center the box */
+        bottom: 1rem;
+        position: relative; /* Keep positioning simple */
+    }
+
+    .box span {
+        width: 25%; /* Adjust span width */
+        height: 25%; /* Adjust span height */
+        margin: 5%; /* Maintain margins */
+    }
+}
+
+@media (max-width: 768px) {
+    .text-start {
+        position: relative;
+        left: 5%; /* Centering adjustment */
+        top: 30%; /* Adjust top positioning */
+        text-align: center; /* Center text */
+    }
+
+    .home-page h1 {
+        font-size: 3rem; /* Adjusted font size */
+        text-align: center;
+    }
+
+    .home-page h2 {
+        font-size: 1.5rem; /* Adjusted font size */
+        text-align: center; 
+    }
+
+    .line {
+        display: flex; /* Ensure it's a flex container */
+        justify-content: center; /* Center the line */
+        margin: 20px 0; /* Add vertical spacing */
+    }
+
+    .button-group {
+        justify-content: center; /* Center buttons */
+    }
+
+    .box {
+        width: 80%; /* Full width on smaller screens */
+        max-width: 120px; /* Limit max width */
+        height: auto; /* Adjust height based on content */
+        margin: 0 auto; /* Center the box */
+        bottom: 1rem;
+        position: relative; /* Keep positioning simple */
+    }
+
+    .box span {
+        width: 25%; /* Adjust span width */
+        height: 25%; /* Adjust span height */
+        margin: 5%; /* Maintain margins */
     }
 }
