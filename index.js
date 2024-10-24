@@ -101,3 +101,12 @@ document.addEventListener('DOMContentLoaded', () => {
     contactWidget.addEventListener('mouseenter', hideFeedback);
     contactWidget.addEventListener('mouseleave', showFeedback);
 });
+
+const feedbackImage = document.getElementById('feedbackImage');
+
+setInterval(() => {
+    feedbackImage.classList.add('shake-animation');
+    setTimeout(() => {
+        feedbackImage.classList.remove('shake-animation');
+    }, 2000); // Duration of the animation
+}, 10000); // 10 seconds interval
