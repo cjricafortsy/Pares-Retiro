@@ -86,7 +86,7 @@ video {
 }
 
 .home-page h1 {
-    font-family: 'Cooper Black', sans-serif;
+    font-family: 'Cooper Black', serif;
     font-weight: bold;
     color: red;
     font-size: 6rem;
@@ -99,7 +99,7 @@ video {
 }
 
 .home-page h2 {
-    font-family: 'Cooper Black', sans-serif;
+    font-family: 'Cooper Black', serif;
     font-size: 2rem;
     color: white;
     font-weight: bold;
