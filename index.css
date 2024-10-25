@@ -385,13 +385,14 @@ video {
     }
 
     .feedback{
-        width: 150%;
+        width: 120%;
         height: auto;
-        right: 40%;
+        right: 55%;
+        bottom: 55%;
     }
 
     .widget:hover{
-        transform: scale(2);
+        transform: scale(1.8);
     }
 }
 
