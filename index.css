@@ -283,12 +283,14 @@ video {
 }
 
 .widget-container {
-    background-color: rgb(191, 24, 24); /* Background color */
+    background-color: rgba(255, 0, 0, 0.3); /* Background color */
     width: 13rem; /* Adjust width as needed */
     height: auto; /* Automatically adjust height based on content */
     border: 2px solid black; /* Add a border */
     border-radius: 10px; /* Optional: rounded corners */
     padding: 1rem; /* Add padding for spacing */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 
