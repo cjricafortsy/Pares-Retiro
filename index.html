@@ -9,7 +9,7 @@
 
     <link rel="icon" href="Assets/PARES.png" width="100">
     <link rel="stylesheet" href="index.css">
-    <title>Pare Retiro</title>
+    <title>Pares Retiro</title>
 </head>
 <body>
 
@@ -72,12 +72,19 @@
     
     <div id="contact-widget" class="widget position-fixed bottom-0 end-0 p-3">
         <img src="Assets/Feedback.png" alt="Feedback" class="feedback" id="feedbackImage">
-        <div class="d-flex flex-column-reverse">
-            <a class="btn btn-danger">
-                <img src="Assets/QR.png" alt="QR Code" style="width: 10rem; height: auto;">
-            </a>
-        </div>
+        <div class="widget-container d-flex flex-column align-items-center">
+            <img src="Assets/QR.png" alt="QR Code" style="width: 10rem; height: auto;">
+            <span class="d-block mt-2">
+                <a href="https://forms.gle/AarFMqRvNaKnHSSr8" target="_blank" style="text-decoration: none;">
+                    <button class="btn" style="background-color: rgb(4, 4, 133); width: 10rem; border-radius: 20px;">
+                        <strong style="color: white;">Click Me!</strong>
+                        <img id="clickImage" src="Assets/click.png" alt="" style="width: 1.5rem; height: auto; margin-left: 5px;">
+                    </button>
+                </a>
+            </span>
+        </div>        
     </div>
+    
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="index.js"></script>

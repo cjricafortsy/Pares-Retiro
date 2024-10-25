@@ -282,26 +282,53 @@ video {
     transform: translateY(-10px); /* Slight upward movement for effect */
 }
 
-@keyframes shake {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(15deg);
-    }
-    50% {
-        transform: rotate(-15deg);
-    }
-    75% {
-        transform: rotate(15deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
+.widget-container {
+    background-color: rgb(191, 24, 24); /* Background color */
+    width: 13rem; /* Adjust width as needed */
+    height: auto; /* Automatically adjust height based on content */
+    border: 2px solid black; /* Add a border */
+    border-radius: 10px; /* Optional: rounded corners */
+    padding: 1rem; /* Add padding for spacing */
 }
 
-.shake-animation {
-    animation: shake 1s ease-in-out infinite; /* Adjust duration and timing as needed */
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+    75% { transform: rotate(-5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+.shakebtn {
+    animation: shake 0.5s ease-in-out; /* Adjust duration as needed */
+}
+
+@keyframes shake1 {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    50% { transform: rotate(10deg); }
+    75% { transform: rotate(-10deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.feedbackImage{
+    animation: shake1 2s ease-in-out;
+}
+
+#clickImage {
+    transform: scale(1); /* Start scaled down */
+    transition: transform 1s ease-in-out; /* Smooth transition for scaling */
+}
+
+@keyframes scaleInOut {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+}
+
+.scale-animation {
+    animation: scaleInOut 1s ease-in-out; /* Adjust duration as needed */
 }
 
 
