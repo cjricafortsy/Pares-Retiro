@@ -273,7 +273,7 @@ video {
 }
 
 .widget:hover {
-    transform: scale(3); /* Scale up on hover */
+    transform: scale(2.5); /* Scale up on hover */
 }
 
 .feedback.hidden {
